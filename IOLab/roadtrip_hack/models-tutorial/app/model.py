@@ -13,7 +13,7 @@ trips = db.alltrips
 def createUser(inputName, userPW):
 	users.insert({inputName: userPW})
 
-def checkUser(inputName):
+def checkUser(inputName, userPW):
 	if users.find_one(inputName)
 
 def createTrip(tripDict):
@@ -21,3 +21,4 @@ def createTrip(tripDict):
 
 def getUserTrips(inputName):
 	usersTrips = trips.find('')
+	return usersTrips
