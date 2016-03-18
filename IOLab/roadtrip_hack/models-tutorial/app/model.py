@@ -11,10 +11,18 @@ users = db.allusers
 trips = db.alltrips
 
 def createUser(inputName, userPW):
-	users.insert({inputName: userPW})
+	users.insert({'username': inputName, 'userPW': userPW})
 
 def checkUser(inputName, userPW):
-	if users.find_one(inputName)
+	userAttempt = users.findOne(inputName)
+		if userAttempt['username'] != None:
+			if userAttempt['userPW'] == userAttempt['pw']:
+				return 1
+			else:
+				return 0
+		else:
+			return 2
+
 
 def createTrip(tripDict):
 	trips.insert(tripDict)
